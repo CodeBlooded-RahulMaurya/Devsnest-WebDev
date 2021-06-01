@@ -1,0 +1,21 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  opacity: 80%;
+  background-image: url("https://wallpapercave.com/wp/wp2499246.jpg");
+  border: solid 10px;
+}
+
+div {
+  padding: 100px;
+}
+
+p{
+    font-family: cascadia code;
+}
+
+h1 {
+}
