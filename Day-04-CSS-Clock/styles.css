@@ -1,59 +1,68 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-.container{
-    display: flex;
+.clock {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  border: 50px;
+  border: 70px solid red;
+  position: relative;
+  box-shadow: 0px 0px 3px 12px rgba(203, 230, 235, 0.97),
+    inset -1px 0px 0px 11px #d3eff1, inset 0px 0px 0px 9px #d2e6e9;
+}
+
+.hour,
+.minute,
+.second {
+  
+  border-radius: 500%;
+  background-color: black;
+}
+
+.hour {
+  width: 10px;
+  height: 190px;
+  margin-right: 50%;
+  margin-left: 50%;
+  margin-top: 10%;
+}
+
+.minute {
+  width: 10px;
+  height: 220px;
+  margin-right: 50%;
+  margin-left: 58%;
+  margin-top: 0%;
+  transform: rotate(-20deg);
+}
+
+.second{
     position: relative;
+    width : 6px;
+    height: 225px;
+    margin-top: 0%;
+    margin: auto;
+    margin-top: -55%;
+    margin-left: 30%;
+    transform: rotate(60deg);
 }
 
-.circle1 {
-    background: red;
-    border-radius: 50%;
-    border-color: blue;
-    border: 10px;
-    width: 600px;
-    height: 600px;
-    position: relative;
-    box-shadow:  -1px -2px 13px 7px hsl(180, 1%, 41%);
-    /* box-shadow:  -1px 2px 19px 7px #85DDB2; */
+.mid{
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: -36%;
+  margin-right: 46%;
 }
 
-.circle2 {
-    background: white;
-    border-radius: 50%;
-    width: 450px;
-    height: 450px;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: auto;
-    box-shadow: inset -1px -2px 13px 7px #555757;
-    /* shadow */
-    /* box-shadow: inset -1px 2px 19px 7px #85DDB2; */
-}   
-
-.container .clock .circle1 .circle2 .minuteHand{
-    background-color: black;
-    position: absolute;
-    left: 15px;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-    width: 200px;
-    height: 8px;
-    z-index: 10;
-}
-
-.container .clock .circle1 .circle2 .hourHand{
-    background-color: black;
-    position: absolute;
-    left: 15px;
-    bottom: 0;
-    right:0%;
-    top: 0;
-    margin: auto;
-    width: 8px;
-    height: 150px;
-    z-index: 10;
-    transform: rotate(45deg)
+h1 {
+  padding: 50px;
+  float: left;
 }
