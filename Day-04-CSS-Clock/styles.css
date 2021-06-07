@@ -63,6 +63,9 @@
 }
 
 h1 {
+  font-family: cascadia code;
+  font-weight: 500;
+  font-size:50px;
   padding: 50px;
   float: left;
 }
