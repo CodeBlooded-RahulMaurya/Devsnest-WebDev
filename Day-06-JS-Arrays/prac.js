@@ -12,6 +12,8 @@ for (let i = 0; i < a1.length; i++) {
   console.log(a1[i], " - ", i);
 }
 
+console.log(typeof 56);
+
 for (let el of a1) {
   console.log(el);
 }
@@ -25,3 +27,4 @@ console.log(a1.filter((item) => item % 2));
 console.log(a1);
 console.log(a1.map((item) => (item = 1)));
 console.log(a1)
+console.log(Array.isArray(a1))
