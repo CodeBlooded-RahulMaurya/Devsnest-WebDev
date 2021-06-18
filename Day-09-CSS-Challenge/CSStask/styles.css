@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+.screen{
+    height: 80px;
+    width: 90%;
+    margin:0 auto;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: black;
+}
+
+h2{
+    display: inline-block;
+}
+
+.text{
+    text-align: center;
+    padding: 30px;
+    background-color: aquamarine;
+}
+
+.seating-area{
+    width: 700px;
+    height: 500px;
+    background-color: cadetblue;
+}
+
