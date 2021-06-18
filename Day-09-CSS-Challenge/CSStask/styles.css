@@ -4,16 +4,19 @@
     box-sizing: border-box;
 }
 
-body{
-    height: 100vh;
+
+
+.container{
+  height: 88vh;
+  justify-content: space-between;
 }
 
 .screen{
-    height: 80px;
-    width: 90%;
+    height: 15px;
+    width: 32%;
     margin:0 auto;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
     background-color: black;
 }
 
@@ -28,8 +31,20 @@ h2{
 }
 
 .seating-area{
-    width: 700px;
-    height: 500px;
-    background-color: cadetblue;
+    width: 90%;
+    height: 82vh;
+    background-color: #c24a2cc7;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 8px;
 }
+
+.seat:hover {
+    background-color: #521607c7;
+    opacity: 0.5;
+  }
+
+
 
