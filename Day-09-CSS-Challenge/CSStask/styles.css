@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 
-
+body{
+    background-color: pink;
+}
 
 .container{
   height: 88vh;
@@ -27,7 +29,7 @@ h2{
 .text{
     text-align: center;
     padding: 30px;
-    background-color: aquamarine;
+    
 }
 
 .seating-area{
@@ -39,6 +41,7 @@ h2{
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 5px;
     padding: 8px;
+    border-radius: 2px;
 }
 
 .seat:hover {
@@ -46,5 +49,10 @@ h2{
     opacity: 0.5;
   }
 
-
+  .seat.booked {
+    background-color: #521607c7;
+    opacity: 0.6;
+    /* box-shadow: inset 21px 21px 42px#521607c7,
+            inset -21px -21px 42px #521607c7; */
+  }
 
