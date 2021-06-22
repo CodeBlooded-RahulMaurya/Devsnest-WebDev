@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+.header{
+  text-align: center;
+  margin: 20px;
+
+}
+
+.stats{
+  justify-content: center;
+  display: flex;
+}
+
+h2{
+  padding: 10px 10px 10px 10px;
+}
+
+.cards{
+  margin : 0 auto;
+    height: 75vh;
+    width: 90% ;
+    display: grid;
+    background-color: pink;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 8px;
+    border-radius: 2px;
+    
+}
+
+.flip-card {
+  height: 25%;
+  width: 20%;
+ }
+  
+  .flip-card-inner {
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+
+   
