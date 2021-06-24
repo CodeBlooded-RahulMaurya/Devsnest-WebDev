@@ -51,7 +51,7 @@ span{
   
   .card-front {
     background-color: rgb(196, 12, 125);
-    color: black;
+    backface-visibility: hidden;
   }
   
   .card-back {
@@ -61,4 +61,10 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    backface-visibility: hidden;
+
+  }
+
+  .done{
+    visibility: hidden;
   }

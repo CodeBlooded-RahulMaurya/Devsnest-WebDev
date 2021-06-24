@@ -28,11 +28,53 @@ words=[...words, ...words];
 
 var backText = document.querySelectorAll(".card-back");
 
+var firstCard = undefined;
+var secondCard = undefined;
 var cards = document.querySelectorAll('.flip-card');
+
+function helper(cards[i]){
+
+}
+
 for(let i=0; i<16; i++){
   cards[i].addEventListener('click', (e) =>{
-    cards[i].classList.add('flipped');
+    cards[i].className = 'flipped';
+    if(firstCard){
+      secondCard = e.target.parentNode
+      setTimeout(function (){
+      if (firstCard.querySelector('h2').innerHTML === secondCard.querySelector('h2').innerHTML){
+        console.log(firstCard.querySelector('h2').innerHTML)
+        console.log(firstCard.parentNode)
+        firstCard.parentNode.classList.remove('flipped');
+        firstCard.parentNode.classList.add('done');
+        secondCard.parentNode.classList.remove('flipped');
+        secondCard.parentNode.classList.add('done');
+        firstCard = undefined;
+        secondCard = undefined;
+      }
+      else{
+        firstCard.parentNode.classList.remove('flipped');
+        firstCard.parentNode.classList.add('flip-card');
+        secondCard.parentNode.classList.remove('flipped');
+        secondCard.parentNode.classList.add('flip-card');
+        firstCard = undefined;
+      }
+    },600)
+      
+    }
+    else{
+      firstCard = e.target.parentNode;
+      let dup = firstCard.cloneNode(true);
+      firstCard.parentNode.removeEventListener('click', e);
+    }
+    console.log('------------');
+    console.log(e.target.parentNode.parentNode);
+    console.log(e.target.parentNode)
+    console.log('------------');
   })
+
+    
+
   let back=document.createElement("div");
   let rand=Math.floor(Math.random()*(16-i));
   backText[i].innerHTML="<h2>"+words[rand]+"</h2>";
@@ -40,23 +82,11 @@ for(let i=0; i<16; i++){
   
   // console.log("done");
 }
-console.log(e.target());
+// console.log(e.target());
 
-var chances = 30;
-var firstCard  = undefined;
-var secondCard = undefined;
-while(true){
-  if(click){
 
-  if (firstCard){
 
-  }
-  else{
-    secondCard = e.targtet()
-    console.log("clicked");
-  }
-}
-} 
+
 
 
 
