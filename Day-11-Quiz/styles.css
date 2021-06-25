@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: bisque;
+  display: flex;
+}
+
+.container {
+  margin: auto;
+  background-color: brown;
+  width: 50%;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.cards {
+  height: 100%;
+  width: 100%;
+}
+
+.questions {
+  height: 45%;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  width: 80%;
+  margin: 20px 20px 5px 20px;
+  height: 30%;
+  border-radius: 5px;
+}
+
+h2{
+  font-size:xx-large;
+  margin: 10% 20% 10% 20%;
+}
+
+
