@@ -32,9 +32,6 @@ var firstCard = undefined;
 var secondCard = undefined;
 var cards = document.querySelectorAll('.flip-card');
 
-function helper(cards[i]){
-
-}
 
 for(let i=0; i<16; i++){
   cards[i].addEventListener('click', (e) =>{
