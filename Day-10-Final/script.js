@@ -1,7 +1,5 @@
 var values = [];
 
-
-
 for (let i = 1; i <= 16; i++) {
 
   var flipCard = document.createElement("div");
@@ -70,8 +68,6 @@ for(let i=0; i<16; i++){
     console.log('------------');
   })
 
-    
-
   let back=document.createElement("div");
   let rand=Math.floor(Math.random()*(16-i));
   backText[i].innerHTML="<h2>"+words[rand]+"</h2>";
@@ -80,10 +76,3 @@ for(let i=0; i<16; i++){
   // console.log("done");
 }
 // console.log(e.target());
-
-
-
-
-
-
-

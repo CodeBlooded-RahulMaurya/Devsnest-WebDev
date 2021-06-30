@@ -87,7 +87,7 @@ let questions = [
     option4: "In the middle of her apartment",
     correct: "In the trunk of a car",
   },
-  
+
   {
     question:
       "Where was the weapon from which Elliot allegedly shot Tyrell hidden in S01?",
@@ -166,20 +166,70 @@ let questions = [
   },
 ];
 
-const shuffleArray = array => {
+const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
-}
+};
 shuffleArray(questions);
 console.log(questions);
 
-for(let i=0; i<1; i++){
+
+
+for (let i = 0; i < 10; i++) {
   var ques = document.querySelector(".questions");
-  var q  = document.createElement('h2');
+  var q = document.createElement("h2");
   q.innerText = questions[i]["question"];
   ques.appendChild(q);
+  var op = document.querySelectorAll(".opt");
+  for (let j = 0; j < 4; j++) {
+    shuffleArray(op);
+    var o = document.createElement("h3");
+    o.innerText = questions[i]["option" + (j + 1)];
+    op[j].appendChild(o);
+
+    op[j].addEventListener("click", (e) => {
+      console.log(e.target);
+      console.log(e.target.nodeName);
+
+      if (e.target.nodeName == "BUTTON") {
+        var h3 = e.target.getElementsByTagName("H3");
+        console.log(h3.innerHTML);
+        if (h3.innerText === questions[i]["correct"]) {
+          e.target.style.backgroundColor = "green";
+        } else {
+          e.target.style.backgroundColor = "red";
+          var options = document.querySelectorAll("h3");
+          for (let k = 0; k < 4; k++) {
+            if (options[k].innerText === questions[i]["correct"]) {
+              options[k].parentNode.style.backgroundColor = "green";
+              break;
+            }
+          }
+        }
+      } else {
+        if (e.target.innerText === questions[i]["correct"]) {
+          e.target.parentNode.style.backgroundColor = "green";
+        } else {
+          e.target.paretNode.style.backgroundColor = "red";
+          var options = document.querySelectorAll("h3");
+          console.log(options)
+          for (let k = 0; k < 4; k++) {
+            if (options[k].innerText === questions[i]["correct"]) {
+              options[k].parentNode.style.backgroundColor = "green";
+              break;
+            }
+          }
+        }
+      }
+      // async function test() {
+      //   console.log('waiting keypress..')
+      //   await waitingKeypress();
+      //   console.log('good job!')
+      // }
+    });
+  }
 }
