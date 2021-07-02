@@ -174,77 +174,25 @@ const shuffleArray = (array) => {
     array[j] = temp;
   }
 };
-
-
 shuffleArray(questions);
-var qIndex = 0;
-/*
-
-start
-getQues
-reset
-get
-
-*/
-
-// const func = async () => { await sleep(1000) } ;
-
-function getQues(){
-    if (qIndex < 10){
-        // alert("Completed");
-    }
-    else{
-      var ques = document.querySelector(".questions");
-      var q = document.createElement("h2");
-      q.innerText = questions[i]["question"];
-      ques.appendChild(q);
-      let op = document.querySelectorAll(".opt");
-      for (let j = 0; j < 4; j++) {
-          let o = document.createElement("h3");
-          o.innerText = questions[i]["option" + (j + 1)];
-          op[j].appendChild(o);
-          op[j].addEventListener("click", (e)=>{check(e,questions[i],questions[i].correct)});
-      }
-    }
-    console.log(qIndex);
-    qIndex+=1;
-    func();
-}
-
-
-
-
 console.log(questions);
 
+// function check(e, question, opt)
 
-function check(e, question, opt){
-  if (e.target.innerText == question.correct){
-      e.target.style.backgroundColor = "green";
-  }
-  else{
-    e.target.style.backgroundColor = "red";
-    let opts = document.querySelectorAll("H3");
-    for(let i=0; i<4; i++){
-      if(opts[i].innerHTML===question.correct){
-        opts[i].style.backgroundColor = "green";
-      }
-    }
-  }
-  
+
+
+const startButton = document.getElementsByClassName(".start");
+
+startButton.addEvenetListnener("click", startGame);
+
+function startGame(){
+  console.log("started");
+  startButton.classList.add("hide");
 }
 
+function setNextQuestion(){
+}
 
-function reset(){
-  let ques = document.querySelector(".questions");
-  ques.querySelector("H2").remove();
-  let op = document.querySelectorAll(".opt");
-  for(let i = 0; i < 4; i++){
-    let o = op[i];
-    o.className = "opt";
-    var oo = o.querySelector("H3")
-    oo.remove();
-  }
-  getQues();
-};
+function selectAnswer(){
+}
 
-getQues();

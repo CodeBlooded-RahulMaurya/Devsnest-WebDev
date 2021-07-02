@@ -174,77 +174,64 @@ const shuffleArray = (array) => {
     array[j] = temp;
   }
 };
-
-
 shuffleArray(questions);
-var qIndex = 0;
-/*
-
-start
-getQues
-reset
-get
-
-*/
-
-// const func = async () => { await sleep(1000) } ;
-
-function getQues(){
-    if (qIndex < 10){
-        // alert("Completed");
-    }
-    else{
-      var ques = document.querySelector(".questions");
-      var q = document.createElement("h2");
-      q.innerText = questions[i]["question"];
-      ques.appendChild(q);
-      let op = document.querySelectorAll(".opt");
-      for (let j = 0; j < 4; j++) {
-          let o = document.createElement("h3");
-          o.innerText = questions[i]["option" + (j + 1)];
-          op[j].appendChild(o);
-          op[j].addEventListener("click", (e)=>{check(e,questions[i],questions[i].correct)});
-      }
-    }
-    console.log(qIndex);
-    qIndex+=1;
-    func();
-}
-
-
-
-
 console.log(questions);
 
+// function check(e, question, opt)
 
-function check(e, question, opt){
-  if (e.target.innerText == question.correct){
-      e.target.style.backgroundColor = "green";
-  }
-  else{
-    e.target.style.backgroundColor = "red";
-    let opts = document.querySelectorAll("H3");
-    for(let i=0; i<4; i++){
-      if(opts[i].innerHTML===question.correct){
-        opts[i].style.backgroundColor = "green";
+
+for (let i = 0; i < 10; i++) {
+  setTimeout(function () {
+    var ques = document.querySelector(".questions");
+  var q = document.createElement("h2");
+  q.innerText = questions[i]["question"];
+  ques.appendChild(q);
+  var op = document.querySelectorAll(".opt");
+  for (let j = 0; j < 4; j++) {
+    shuffleArray(op);
+    var o = document.createElement("h3");
+    o.innerText = questions[i]["option" + (j + 1)];
+    op[j].appendChild(o);
+
+    op[j].addEventListener("click", (e) => {
+      console.log(e.target);
+      console.log(e.target.nodeName);
+
+      if (e.target.nodeName == "BUTTON") {
+        var h3 = e.target.getElementsByTagName("H3");
+        console.log(h3.innerHTML);
+        if (h3.innerText === questions[i]["correct"]) {
+          e.target.style.backgroundColor = "green";
+        } else {
+          e.target.style.backgroundColor = "red";
+          var options = document.querySelectorAll("h3");
+          for (let k = 0; k < 4; k++) {
+            if (options[k].innerText === questions[i]["correct"]) {
+              options[k].parentNode.style.backgroundColor = "green";
+              break;
+            }
+          }
+        }
+      } else {
+        if (e.target.innerText === questions[i]["correct"]) {
+          e.target.parentNode.style.backgroundColor = "green";
+        } else {
+          e.target.paretNode.style.backgroundColor = "red";
+          var options = document.querySelectorAll("h3");
+          console.log(options)
+          for (let k = 0; k < 4; k++) {
+            if (options[k].innerText === questions[i]["correct"]) {
+              options[k].parentNode.style.backgroundColor = "green";
+              break;
+            }
+          }
+        }
       }
-    }
+      // async function test() {
+      //   console.log('waiting keypress..')
+      //   await waitingKeypress();
+      //   console.log('good job!')
+      // }
+    });
   }
-  
-}
-
-
-function reset(){
-  let ques = document.querySelector(".questions");
-  ques.querySelector("H2").remove();
-  let op = document.querySelectorAll(".opt");
-  for(let i = 0; i < 4; i++){
-    let o = op[i];
-    o.className = "opt";
-    var oo = o.querySelector("H3")
-    oo.remove();
-  }
-  getQues();
-};
-
-getQues();
+} , 3000); }
