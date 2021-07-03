@@ -1,4 +1,4 @@
-let questions = [
+var questions = [
   {
     question: "Who created the Mr. Robot series?",
     option1: "Rami Malek",
@@ -166,6 +166,8 @@ let questions = [
   },
 ];
 
+var sample = '<div class="questions"></div><div class="options"><button class="opt"></button><button class="opt"></button><button class="opt"></button><button class="opt"></button></div><div class = "footer"><button class="prev">Prev</button><button class="next">next</button>';
+
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -190,25 +192,25 @@ get
 // const func = async () => { await sleep(1000) } ;
 
 function getQues(){
-    if (qIndex < 10){
-        // alert("Completed");
+    if (qIndex > 9){
+        alert("Completed");
     }
     else{
       var ques = document.querySelector(".questions");
       var q = document.createElement("h2");
-      q.innerText = questions[i]["question"];
+      q.innerText = questions[qIndex]["question"];
       ques.appendChild(q);
       let op = document.querySelectorAll(".opt");
       for (let j = 0; j < 4; j++) {
           let o = document.createElement("h3");
-          o.innerText = questions[i]["option" + (j + 1)];
+          o.innerText = questions[qIndex]["option" + (j + 1)];
           op[j].appendChild(o);
-          op[j].addEventListener("click", (e)=>{check(e,questions[i],questions[i].correct)});
+          op[j].addEventListener("click", (e)=>{check(e,qIndex)});
       }
     }
     console.log(qIndex);
-    qIndex+=1;
-    func();
+
+   
 }
 
 
@@ -216,35 +218,42 @@ function getQues(){
 
 console.log(questions);
 
+function reset(){
+  var temp = document.querySelectorAll("H3");
+  for(let i=0; i<4; i++){
+    if(temp[i]!=undefined)
+    temp[i].outerHTML = "";
+  }
+  var temp2 = document.querySelector("H2");
+  if(temp2!=undefined || temp2!=null)
+  temp2.outerHTML = '';
+  console.log("resetting");
+};
 
-function check(e, question, opt){
-  if (e.target.innerText == question.correct){
+
+function check(e, qIndex){
+    console.log(questions[qIndex-1]);
+  console.log(questions[qIndex-1]["correct"])
+  if (e.target.innerText == questions[qIndex-1]["correct"]){
       e.target.style.backgroundColor = "green";
   }
   else{
     e.target.style.backgroundColor = "red";
     let opts = document.querySelectorAll("H3");
     for(let i=0; i<4; i++){
-      if(opts[i].innerHTML===question.correct){
+      if(opts[i].innerHTML===questions[qIndex-1]["correct"]){
         opts[i].style.backgroundColor = "green";
       }
     }
   }
-  
+
+  console.log("checking");
 }
 
+var nextButton = document.querySelector(".next");
 
-function reset(){
-  let ques = document.querySelector(".questions");
-  ques.querySelector("H2").remove();
-  let op = document.querySelectorAll(".opt");
-  for(let i = 0; i < 4; i++){
-    let o = op[i];
-    o.className = "opt";
-    var oo = o.querySelector("H3")
-    oo.remove();
-  }
-  getQues();
-};
+nextButton.addEventListener('click', ()=>{ reset(); getQues();     qIndex+=1;
+  });
 
-getQues();
+
+
