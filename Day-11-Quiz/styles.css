@@ -2,19 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 body {
   height: 100vh;
   width: 100vw;
-  background-color: rgb(204, 123, 24);
+  background-color: #264653;
   display: flex;
 }
 
 .container {
   margin: auto;
-  background-color: brown;
+  background-color: #7B6D8D;
   width: 50%;
   height: 90%;
   align-items: center;
@@ -31,7 +31,7 @@ body {
   height: 40%;
   width: 100%;
   border-radius: 20px 20px 0 0;
-  background-color: green;
+  background-color: #2A9D8F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,19 +49,13 @@ button {
   margin: 20px 20px 5px 20px;
   height: 30%;
   border-radius: 5px;
+  background-color: #DCFFFD;
 }
 
 button:hover{
-  background-color: peru;
+  background-color: #c0b2b1;
 }
 
-.wrong{
-  background-color: red;
-}
-
-.correct{
-  background-color: green;
-}
 h2{
   font-size:xx-large;
   margin: 10% 20% 10% 20%;
@@ -79,12 +73,43 @@ h3{
   /* width: 100%; */
   display: grid;
   grid-template-columns: repeat(2, 2fr);
+  margin-top: 3%;
 }
 .next ,.prev{
   width: 40%;
-  margin: auto;
-  height: 100%;
+  margin:  auto;
+  height: 200%;
 
 }
 
+.wrong{
+  background-color: #89023E;
+}
+
+.correct{
+  background-color: #345511;
+  
+  /* background-color: #B0CA87; */
+}
+
+.hidden{
+  visibility: hidden;
+  z-index: -19;
+}
+
+.start-page{
+  
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  background: url('/Day-11-Quiz/icons/start.png');
+  height: 50px;
+  width: 50px;
+  display: block;
+  /* Other styles here */
+}
 

@@ -166,7 +166,7 @@ var questions = [
   },
 ];
 
-var sample = '<div class="questions"></div><div class="options"><button class="opt"></button><button class="opt"></button><button class="opt"></button><button class="opt"></button></div><div class = "footer"><button class="prev">Prev</button><button class="next">next</button>';
+var score = 0;
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -189,7 +189,7 @@ get
 
 */
 
-// const func = async () => { await sleep(1000) } ;
+
 
 function getQues(){
     if (qIndex > 9){
@@ -201,6 +201,7 @@ function getQues(){
       q.innerText = questions[qIndex]["question"];
       ques.appendChild(q);
       let op = document.querySelectorAll(".opt");
+      shuffleArray(op)
       for (let j = 0; j < 4; j++) {
           let o = document.createElement("h3");
           o.innerText = questions[qIndex]["option" + (j + 1)];
@@ -208,9 +209,9 @@ function getQues(){
           op[j].addEventListener("click", (e)=>{check(e,qIndex)});
       }
     }
+    var sc = document.querySelector(".score");
+    sc.innerText = score + "/10";
     console.log(qIndex);
-
-   
 }
 
 
@@ -228,6 +229,8 @@ function reset(){
   if(temp2!=undefined || temp2!=null)
   temp2.outerHTML = '';
   console.log("resetting");
+  let t = document.querySelector('body');
+      t.className = "";
 };
 
 
@@ -235,18 +238,23 @@ function check(e, qIndex){
     console.log(questions[qIndex-1]);
   console.log(questions[qIndex-1]["correct"])
   if (e.target.innerText == questions[qIndex-1]["correct"]){
-      e.target.style.backgroundColor = "green";
+      e.target.style.backgroundColor = "#81C14B"; //green
+      score+=1;
+      let t = document.querySelector('body');
+      t.className = "correct";
   }
   else{
-    e.target.style.backgroundColor = "red";
+    e.target.style.backgroundColor = "#EC7357";
     let opts = document.querySelectorAll("H3");
     for(let i=0; i<4; i++){
       if(opts[i].innerHTML===questions[qIndex-1]["correct"]){
-        opts[i].style.backgroundColor = "green";
+        opts[i].style.backgroundColor = "#81C14B"; ///green
       }
     }
+    let t = document.querySelector('body');
+      t.className = "wrong";
   }
-
+  // setTimeout(()=>{reset(); getQues(); qIndex+=1;}, 10000);
   console.log("checking");
 }
 
@@ -254,6 +262,10 @@ var nextButton = document.querySelector(".next");
 
 nextButton.addEventListener('click', ()=>{ reset(); getQues();     qIndex+=1;
   });
+
+
+ 
+
 
 
 
