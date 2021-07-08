@@ -1,9 +1,15 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     width: 100vw;
     height: 100vw;
     display: grid;
     grid-template-rows: 10% 90%;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: #131313;
     color: white;
 }
