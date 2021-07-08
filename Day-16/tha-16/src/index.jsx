@@ -2,20 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Memecard() {
+function Cards() {
   return (
     <>
+    <div className= "meme-meme">
       <Card />
+    </div>
+    <div className = "chess-chess">
       <Chessboard />
+    </div>
     </>
   );
 }
 
 function Chessboard(){
-  return(
-    <div className = "chessboard">
-      <Tiles/>
-    </div>
+  return (
+      <div className="chessboard">
+        <Tiles />
+      </div>
   );
 }
 var j = 1;
@@ -76,7 +80,7 @@ function Img() {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Memecard />
+    <Cards />
   </React.StrictMode>,
   document.getElementById("root")
 );
