@@ -18,19 +18,25 @@ function Chessboard(){
     </div>
   );
 }
-
-var tile = [];
 var j = 1;
+var tile = [];
+
 function getTile(){
+    console.log(i);
     for(var i=1; i<=64; i++){
-      if(i%2==0 && j==1){
+      if(j%2===0){
+        console.log("even");
            tile.push(<div className = 'tile even'></div>);
       }
       else{
-        tile.push(<div className = 'tile black'></div>);
+        tile.push(<div className = 'tile odd'></div>);
+        console.log("odd");
     }
-    if(
+    if(i%8===0){
+      j += 1;
   }
+  j += 1;
+}
     return tile;
 };
 

@@ -16,9 +16,8 @@ body{
 .root{
   height: 100%;
   width: 100%;
-  display: inline;
-  
 }
+
 .card{
   height: 360px;
   width: 400px;
@@ -43,7 +42,7 @@ h1, h4{
   display: grid;
   grid-template-columns: repeat(8,1fr);
   grid-template-rows: repeat(8,1fr);
-
+  padding: 2px;
 }
 
 .tile{
