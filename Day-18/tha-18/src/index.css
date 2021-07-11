@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+}
+
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly ;
+  height: 100%;
+  width: 100%;
+}
+
+.card{
+  height: 360px;
+  width: 400px;
+box-shadow: -8px -5px 9px 5px rgba(215, 225, 244, 0.79), 
+3px 9px 11px 0px rgba(12, 10, 8, 0.62);
+}
+
+
+
+.chessboard{
+  height: 400px;
+  width: 400px;
+  border: 30px solid black;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-template-rows: repeat(8,1fr);
+  padding: 2px;
+}
+
+.tile{
+    height: 100%;
+    width: 100%;
+}
+
+.even{
+  background: white;
+}
+
+.odd{
+  background:black;
+}
+
+/* .tile:nth-child(even){
+  background-color: white ;
+}
+
+.tile:nth-child(odd){
+  background-color: black;
+} */
